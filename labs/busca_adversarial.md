@@ -283,6 +283,11 @@ Como elas implementam diretamente a definição recursiva do Minimax?
 **8.** A função `minimax_decision()` retorna uma `SearchResult` com três
 campos. O que significa cada um deles?
 
+best_action- melhor ação possivel
+best_value- melhor valor
+counter.nodes - melhor quantidade de tentativas exploradas
+
+
 ---
 
 ## Bloco 5 — Poda alfa-beta
