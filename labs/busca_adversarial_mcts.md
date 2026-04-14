@@ -25,7 +25,7 @@ referenciando funções e atributos do código.
   current: jogador da vez
 
   ações legais
-  available_moves: Retorna a lista de jogadas legais no estado atual
+  available_moves: Retorna a lista de jogadas legais no estado atual.
 
   transição
   make_move(self, move: Move):  ``move`` ao estado atual, modificando-o in-place.
@@ -34,7 +34,7 @@ referenciando funções e atributos do código.
   game_over(self): Retorna ``True`` se o jogo chegou ao fim.
 
   utilidade final
-  utilidade final: Verifica se há um vencedor no estado atual
+  utilidade final: Verifica se há um vencedor no estado atual.
   
   
 **2.** Na classe `MCTSNode`, qual é o papel de cada atributo abaixo?
