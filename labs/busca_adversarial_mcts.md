@@ -71,6 +71,26 @@ guardar o histórico completo de todas as simulações?
 - `Simulate`
 - `Back-propagate`
 
+Select: desce na árvore usando UCB1 enquanto o nó corrente já estiver totalmente expandido e o jogo não tiver terminado.
+    while not node.untried_moves and node.children and not rollout_game.game_over():
+            node = node.best_ucb_child(exploration)
+            assert node.move is not None
+            rollout_game.make_move(node.move)
+
+Expand: adiciona um novo filho se ainda houver ações não tentadas.
+   if node.untried_moves and not rollout_game.game_over():
+            node = node.expand(rng)
+            rollout_game = node.game.copy()
+
+Simulate: Simulação: completa a partida fora da árvore com playout aleatório.
+    while not rollout_game.game_over():
+            rollout_game.make_move(rng.choice(rollout_game.available_moves()))
+
+Back-propagate: Simulação: completa a partida fora da árvore com playout aleatório.
+    while not rollout_game.game_over():
+            rollout_game.make_move(rng.choice(rollout_game.available_moves()))
+
+
 ExpliquCe em uma frase o objetivo de cada passo.
 
 **5.** No passo de seleção, por que o algoritmo só desce automaticamente quando
