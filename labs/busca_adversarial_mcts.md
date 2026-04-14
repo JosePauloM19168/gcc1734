@@ -111,9 +111,13 @@ Por que essas jogadas não viram nós permanentes da árvore?
 **8.** Por que `ucb1()` retorna `inf` quando `visits == 0`? O que isso força o
 algoritmo a fazer?
 
+R: Durante a seleção, o algoritmo escolhe o nó com maior UCB1 e qualquer nó com inf sempre vence nós com valores finitos com isso todos os nós não visitados são escolhidos antes de qualquer nó ja explorado.
+
 **9.** No final de `mcts_decision()`, a ação retornada é o filho da raiz com
 maior `visits`, e não necessariamente o maior `Q = wins / visits`. Qual é a
 intuição dessa escolha?
+
+R: Ele opta pela escolha da ação que recebeu mais confiança ao longo da busca e não apenas a que teve a melhor média momentânea.
 
 ---
 
