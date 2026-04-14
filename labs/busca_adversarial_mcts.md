@@ -45,6 +45,18 @@ referenciando funções e atributos do código.
 - `untried_moves`
 - `player_just_moved`
 
+children: Filhos já expandidos deste nó.
+
+visits: Número total de vezes que este nó foi visitado.
+
+wins: Soma dos resultados dos playouts que passaram por este nó.
+
+untried_moves: Jogadas legais do estado ``game`` que ainda não foram expandidas.
+
+player_just_moved: Identificador (``'X'`` ou ``'O'``) do jogador que realizou ``move``
+        para chegar a este nó. Usado na retropropagação para creditar a
+        vitória ao jogador correto.
+
 **3.** Por que o nó guarda contadores agregados (`visits` e `wins`) em vez de
 guardar o histórico completo de todas as simulações?
 
