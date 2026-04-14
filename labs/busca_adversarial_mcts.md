@@ -20,6 +20,11 @@ referenciando funções e atributos do código.
 - teste terminal
 - utilidade final
 
+- #R:
+- Estado
+- board: configuração do tabuleiro
+  current: jogador da vez
+
 **2.** Na classe `MCTSNode`, qual é o papel de cada atributo abaixo?
 
 - `children`
