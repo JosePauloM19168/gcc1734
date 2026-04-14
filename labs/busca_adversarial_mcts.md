@@ -80,7 +80,7 @@ Select: desce na árvore usando UCB1 enquanto o nó corrente já estiver totalme
 
 Expand: adiciona um novo filho se ainda houver ações não tentadas.
 
-   if node.untried_moves and not rollout_game.game_over():
+    if node.untried_moves and not rollout_game.game_over():
             node = node.expand(rng)
             rollout_game = node.game.copy()
 
@@ -89,10 +89,12 @@ Simulate: Simulação: completa a partida fora da árvore com playout aleatório
     while not rollout_game.game_over():
             rollout_game.make_move(rng.choice(rollout_game.available_moves()))
 
-Back-propagate: Simulação: completa a partida fora da árvore com playout aleatório.
+Back-propagate: atualiza N e W ao longo do caminho até a raiz.
 
-    while not rollout_game.game_over():
-            rollout_game.make_move(rng.choice(rollout_game.available_moves()))
+        winner = rollout_game.winner()
+        while node is not None:
+            node.update(winner)
+            node = node.parent
 
 
 ExpliquCe em uma frase o objetivo de cada passo.
