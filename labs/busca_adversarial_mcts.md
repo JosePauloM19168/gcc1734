@@ -20,11 +20,23 @@ referenciando funções e atributos do código.
 - teste terminal
 - utilidade final
 
-- #R:
-- Estado
-- board: configuração do tabuleiro
+  Estado
+  board: configuração do tabuleiro
   current: jogador da vez
 
+  ações legais
+  available_moves: Retorna a lista de jogadas legais no estado atual
+
+  transição
+  make_move(self, move: Move):  ``move`` ao estado atual, modificando-o in-place.
+
+  teste terminal
+  game_over(self): Retorna ``True`` se o jogo chegou ao fim.
+
+  utilidade final
+  utilidade final: Verifica se há um vencedor no estado atual
+  
+  
 **2.** Na classe `MCTSNode`, qual é o papel de cada atributo abaixo?
 
 - `children`
@@ -47,7 +59,7 @@ guardar o histórico completo de todas as simulações?
 - `Simulate`
 - `Back-propagate`
 
-Explique em uma frase o objetivo de cada passo.
+ExpliquCe em uma frase o objetivo de cada passo.
 
 **5.** No passo de seleção, por que o algoritmo só desce automaticamente quando
 `node.untried_moves` está vazio?
